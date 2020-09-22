@@ -11,26 +11,26 @@ import javax.crypto.Cipher;
 import javax.xml.bind.DatatypeConverter;
 
 public class CryptoRsa {
-
+// ì—¬ê¸°ì„œ ë°”ë¡œ ìˆ˜ì •í•˜ë©´.
 	private static String RSA_INS_STR = "RSA";
 	 public static void main(String[] args) throws IOException{
 		 String plainText ="this is RSA 123aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-		 System.out.println("Æò¹® ::::::"+plainText);
+		 System.out.println("í‰ë¬¸ ::::::"+plainText);
          KeyPair keyPair;
          try {
-        	 System.out.println("\n¸ğµå : RSA-1024 ");
+        	 System.out.println("\nëª¨ë“œ : RSA-1024 ");
         	 keyPair = createKeypair(1024);
         	 byte[] cipherBytes1024 = encryptRSA_INS_STR(keyPair.getPublic(),plainText.getBytes("UTF-8"));
- 			 System.out.println("¾ÏÈ£¹® :: 1024- "+new String(cipherBytes1024));
+ 			 System.out.println("ì•”í˜¸ë¬¸ :: 1024- "+new String(cipherBytes1024));
  			 byte[] decryptBytes1024 = decryptRSA_INS_STR(keyPair.getPrivate(),  cipherBytes1024);
- 			 System.out.println("º¹È£¹® :: 1024- "+new String(decryptBytes1024));
+ 			 System.out.println("ë³µí˜¸ë¬¸ :: 1024- "+new String(decryptBytes1024));
 
- 			 System.out.println("\n¸ğµå : RSA-2048 ");
+ 			 System.out.println("\nëª¨ë“œ : RSA-2048 ");
         	 keyPair = createKeypair(2048);
         	 byte[] cipherBytes2048 = encryptRSA_INS_STR(keyPair.getPublic(),plainText.getBytes("UTF-8"));
-        	 System.out.println("¾ÏÈ£¹® :: 1024- "+new String(cipherBytes2048));
+        	 System.out.println("ì•”í˜¸ë¬¸ :: 1024- "+new String(cipherBytes2048));
         	 byte[] decryptBytes2048 = decryptRSA_INS_STR(keyPair.getPrivate(),  cipherBytes2048);
-        	 System.out.println("º¹È£¹® :: 1024- "+new String(decryptBytes2048));
+        	 System.out.println("ë³µí˜¸ë¬¸ :: 1024- "+new String(decryptBytes2048));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -84,7 +84,7 @@ public class CryptoRsa {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("¾ÏÈ£È­: "+cTxt);
+		System.out.println("ì•”í˜¸í™”: "+cTxt);
 		return cTxt;
 	}
 	
@@ -98,7 +98,7 @@ public class CryptoRsa {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("º¹È£È­: "+dTxt);
+		System.out.println("ë³µí˜¸í™”: "+dTxt);
 		return dTxt;
 		
 	}
